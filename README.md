@@ -3,7 +3,9 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=shwaib19&label=Profile%20views&color=0e75b6&style=flat" alt="shwaib19" /> </p>
 
-- 📚 Currently learning: NestJS & Docker 💡 **Django, React, Adonis**
+- 📚 Currently learning: NextJS & Docker 💡 
+
+- Recently I worked with:**Django, React, Adonis**
 
 - 💬 Ask me about **Django**
 
