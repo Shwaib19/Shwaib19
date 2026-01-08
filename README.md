@@ -5,7 +5,7 @@
 
 - 📚 Currently learning: NextJS & Docker 💡 
 
-- Recently I worked with:**Django, React, Adonis**
+- I Recently worked with: **Django, React, Adonis**
 
 - 💬 Ask me about **Django**
 
