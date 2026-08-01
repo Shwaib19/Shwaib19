@@ -25,6 +25,4 @@
 
 <img src="https://github-readme-streak-stats.herokuapp.com/?user=Shwaib19&theme=dark" alt="GitHub Stats" width="49%" />
 
-![Stats](https://github-stats-extended.vercel.app/api?username=Shwaib19&theme=tokyonight&show_icons=true)
-
 ![Top Langs](https://github-stats-extended.vercel.app/api/top-langs/?username=Shwaib19&layout=compact&theme=radical)
