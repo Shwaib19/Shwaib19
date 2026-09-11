@@ -1,0 +1,46 @@
+name: Language stats
+
+on:
+  schedule:
+    - cron: '17 4 * * 1' # every Monday
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - .github/scripts/languages.mjs
+      - .github/workflows/languages.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: language-stats
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: Count the languages in my commits
+        run: node .github/scripts/languages.mjs
+        env:
+          # Classic PAT with the "repo" scope, so private and organization repositories are counted.
+          GH_TOKEN: ${{ secrets.METRICS_TOKEN }}
+
+      - name: Commit the refreshed cards
+        run: |
+          git add assets/languages-*.svg
+          if git diff --cached --quiet; then
+            echo "Cards unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: refresh language stats"
+          git push
